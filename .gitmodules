@@ -1,0 +1,15 @@
+[submodule "Indra-contracts"]
+	path = Indra-contracts
+	url = https://github.com/zerefwth/Indra-contracts
+[submodule "Indra-tg"]
+	path = Indra-tg
+	url = https://github.com/zerefwth/Indra-tg
+[submodule "Indra-relayer"]
+	path = Indra-relayer
+	url = https://github.com/zerefwth/Indra-relayer
+[submodule "Indra-kafka-consumer"]
+	path = Indra-kafka-consumer
+	url = https://github.com/zerefwth/Indra-kafka-consumer
+[submodule "Indra-zk-backend"]
+	path = Indra-zk-backend
+	url = https://github.com/zerefwth/Indra-zk-backend
