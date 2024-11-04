@@ -7,10 +7,16 @@ import Confetti from 'react-confetti';
 
 
 export default function Success() {
+    const navigate = useNavigate();
+
     const [searchParams] = useSearchParams();
 
     const receiver = searchParams.get("receiver");
     const amount = searchParams.get("amount");
+
+    const handleNext = async () => {
+        navigate("/widget");
+    };
 
     return (
         <div>
@@ -44,6 +50,14 @@ export default function Success() {
                             {amount + " USDC"}
                         </div>
                     </div>
+                </div>
+                <div
+                    className='w-full h-fit text-center fixed bottom-0'
+                >
+                    <FooterButton
+                        label="Swap"
+                        onClick={handleNext}
+                    />
                 </div>
             </Layout>
         </div>

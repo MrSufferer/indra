@@ -102,26 +102,24 @@ export default function Checkout() {
 
         navigate("/success?receiver=" + receiver + "&amount=" + amount);
 
-        /*
-        const addOrderTxn = prepareContractCall({
-            contract: rampContract,
-            method: "function addOrder(address _onramper, address _token, uint256 _amount, int256 _minFiatRate, uint64 _dstChainSelector)",
-            params: [
-                "0x69051293E342942E7bA168cE9522aBBC7a259A63",
-                "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
-                100,
-                10 ** 8,
-                10344971235874465080
-            ],
-            value: 0
-        })
-        await sendTransaction({
-            account: activeAccount,
-            transaction: addOrderTxn
-        });
+        // const addOrderTxn = prepareContractCall({
+        //     contract: rampContract,
+        //     method: "function addOrder(address _onramper, address _token, uint256 _amount, int256 _minFiatRate, uint64 _dstChainSelector)",
+        //     params: [
+        //         "0x69051293E342942E7bA168cE9522aBBC7a259A63",
+        //         "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+        //         100,
+        //         10 ** 8,
+        //         10344971235874465080
+        //     ],
+        //     value: 0
+        // })
+        // await sendTransaction({
+        //     account: activeAccount,
+        //     transaction: addOrderTxn
+        // });
 
-        setProgressIndex(progressIndex + 1);
-        */
+        // setProgressIndex(progressIndex + 1);
 
         // 2. Listen for order commitment
 

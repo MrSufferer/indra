@@ -18,7 +18,7 @@ import PayPal from './pages/PayPal';
 import Receiver from './pages/Receiver';
 import Amount from './pages/Amount';
 import Success from './pages/Success';
-
+import MayanWidget from './pages/MayanWidget';
 function App() {
     return (
         <ThirdwebProvider>
@@ -39,6 +39,8 @@ function App() {
                     <Route path="/review" element={<Review />} />
                     <Route path="/confirm" element={<ConfirmPayment />} />
                     <Route path="/successful" element={<Successful />} />
+
+                    <Route path="/widget" element={<MayanWidget />} />
                 </Routes>
             </Router>
         </ThirdwebProvider>

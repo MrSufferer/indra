@@ -35,11 +35,11 @@ export default function ThirdWebConnect({ onConnect }) {
                 showThirdwebBranding: false,
             }}
             wallets={wallets}
-            accountAbstraction={{
-                chain: baseSepolia,
-                factoryAddress: "0xb26BE4505119107f9Bb6D4948360E4B7Dea50e29",
-                gasless: true,
-            }}
+            // accountAbstraction={{
+            //     chain: sepolia,
+            //     factoryAddress: "0xb26BE4505119107f9Bb6D4948360E4B7Dea50e29",
+            //     gasless: true,
+            // }}
             connectButton={{
                 label: "Connect",
                 style: {

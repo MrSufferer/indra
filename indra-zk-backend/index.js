@@ -1,5 +1,5 @@
 const Express = require("express")
-const router = require("./routes/routes")
+const router = require("./routes")
 const app = Express()
 const PORT = process.env.PORT || 8080
 const cors = require("cors")

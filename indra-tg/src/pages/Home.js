@@ -37,11 +37,11 @@ function Home() {
         }
     }
     return (
-        <div className='bg-[#C8F73A] relative h-screen overflow-hidden'>
+        <div className='bg-[#ef493a] relative h-screen overflow-hidden'>
             <div className='h-[10%]  p-5 mt-5 flex justify-center items-center'>
                 <h1 className='text-[54px] text-[#000]  font-bold'>INDRA</h1>
             </div>
-            <div className='text-center z-0 absolute w-full'>
+            {/* <div className='text-center z-0 absolute w-full'>
                 <ConnectButton
                     client={client}
                     chain={baseSepolia}
@@ -59,7 +59,7 @@ function Home() {
                         gasless: true,
                     }}
                 />
-            </div>
+            </div> */}
             <div className='w-full h-[75%] text-md items-center flex flex-col justify-center'>
                 {/* <img src='https://cdn-icons-png.flaticon.com/512/1796/1796801.png' className='w-[50%] aspect-square rounded-2xl'/> */}
                 <h1>⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⣼⣿⣿⣿⣿⣿⣷⣾⣿⣿⣿⣿⣾⣿⣿</h1>
@@ -138,7 +138,7 @@ function Home() {
 
             <div className='absolute bottom-0 w-full '>
                 <div className='bottom-10 flex absolute justify-center p-5 w-full'>
-                    <Link to='/paypalemail'>
+                    <Link to='/connect'>
                         <button className='bg-[#000] text-[#C8F73A] h-12 w-[80vw] rounded-xl'>
                             Begin
                         </button>

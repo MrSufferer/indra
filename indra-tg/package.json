@@ -3,6 +3,12 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@mayanfinance/swap-sdk": "^9.5.0",
+        "@solana/wallet-adapter-base": "^0.9.22",
+        "@solana/wallet-adapter-react": "^0.15.33",
+        "@solana/wallet-adapter-react-ui": "^0.9.32",
+        "@solana/wallet-adapter-wallets": "^0.19.19",
+        "@solana/web3.js": "^1.78.0",
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
@@ -13,6 +19,7 @@
         "react-router-dom": "^6.23.0",
         "react-scripts": "5.0.1",
         "tailwind-merge": "^2.3.0",
+        "telegraf": "^4.16.3",
         "thirdweb": "^5.15.0",
         "web-vitals": "^2.1.4"
     },

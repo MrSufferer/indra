@@ -61,7 +61,7 @@ func CreatePayPalInvoice(txAmount int) (string, error) {
 			"invoice_number": "INV-%v",
 			"reference": "Reference-123",
 			"merchant_info": {
-				"email": "merchant@example.com"
+				"email": "sb-ws47s4733692577@business.example.com"
 			},
 			"note": "Thank you for your business!",
 			"terms": "Payment due upon receipt",
@@ -73,7 +73,7 @@ func CreatePayPalInvoice(txAmount int) (string, error) {
 				"quantity": "1",
 				"unit_amount": {
 					"currency_code": "USD",
-					"value": "10.00"
+					"value": "1.00"
 				},
 				"tax": {
 					"name": "Sales Tax",

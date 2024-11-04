@@ -24,11 +24,11 @@ func main() {
 		fmt.Println("Error loading .env file:", err)
 		return
 	}
-	if len(os.Args) < 2 {
-		log.Fatal("No chain argument provided")
-	}
+	// if len(os.Args) < 2 {
+	// 	log.Fatal("No chain argument provided")
+	// }
 
-	args := os.Args[1]
+	args := os.Getenv("CHAIN")
 
 	apiKey := os.Getenv("ANKR_API_KEY")
 
