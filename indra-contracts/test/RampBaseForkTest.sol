@@ -1,18 +1,18 @@
 // SPDX-License-Identifier: Unlicensed
 pragma solidity ^0.8.0;
 
-import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
-import { IERC20 } from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-import { TestBase } from './TestBase.sol';
-import { Ramp } from '../src/Ramp.sol';
-import { Verifier } from '../src/Verifier.sol';
-import { EmailVerifier } from "../src/verifiers/EmailVerifier.sol";
-import { ITokenManager, IEscrowManager, IOrderManager, IUserManager, IVerifier, IRamp, Order, TokenAndFeed, OrderStatus } from "../src/Interfaces.sol";
-import { IndraErrors } from '../src/libraries/IndraErrors.sol';
+import {TestBase} from "./TestBase.sol";
+import {Ramp} from "../src/Ramp.sol";
+import {Verifier} from "../src/Verifier.sol";
+import {EmailVerifier} from "../src/verifiers/EmailVerifier.sol";
+import {ITokenManager, IEscrowManager, IOrderManager, IUserManager, IVerifier, IRamp, Order, TokenAndFeed, OrderStatus} from "../src/Interfaces.sol";
+import {IndraErrors} from "../src/libraries/IndraErrors.sol";
 
-import { ConstructorArgs } from "../script/ConstructorArgs.sol";
-import { console } from "forge-std/Test.sol";
+import {ConstructorArgs} from "../script/ConstructorArgs.sol";
+import {console} from "forge-std/Test.sol";
 
 contract RampBaseForkTest is TestBase {
     IRamp ramp;
@@ -28,18 +28,29 @@ contract RampBaseForkTest is TestBase {
         // Unsure why syntax in deploy script is not allowed in test script
         TokenAndFeed[] memory tokenAndFeeds = new TokenAndFeed[](2);
         {
-            (address token, address feed) = constructorArgs.tokenAndFeeds(block.chainid, 0);
+            (address token, address feed) = constructorArgs.tokenAndFeeds(
+                block.chainid,
+                0
+            );
             tokenAndFeeds[0] = TokenAndFeed(token, feed);
         }
         {
-            (address token, address feed) = constructorArgs.tokenAndFeeds(block.chainid, 1);
+            (address token, address feed) = constructorArgs.tokenAndFeeds(
+                block.chainid,
+                1
+            );
             tokenAndFeeds[1] = TokenAndFeed(token, feed);
         }
-        EmailVerifier emailVerifier = new EmailVerifier();    
+        EmailVerifier emailVerifier = new EmailVerifier();
         address[] memory verifiers = new address[](1);
         verifiers[0] = address(emailVerifier);
         Verifier verifier = new Verifier(verifiers);
-        ramp = new Ramp(DEPLOYER, address(verifier), constructorArgs.ccipRouterAddress(block.chainid), tokenAndFeeds);    
+        ramp = new Ramp(
+            DEPLOYER,
+            address(verifier),
+            constructorArgs.ccipRouterAddress(block.chainid),
+            tokenAndFeeds
+        );
     }
 
     function test_deploy() public {
@@ -52,7 +63,7 @@ contract RampBaseForkTest is TestBase {
 
     function test_ManagerContractsDirectlyCalled_ShouldRevert() public {
         vm.startPrank(DEPLOYER);
-        
+
         TokenAndFeed[] memory tokenAndFeeds = new TokenAndFeed[](1);
         tokenAndFeeds[0] = TokenAndFeed(address(1), address(1));
         vm.expectRevert();
@@ -91,10 +102,7 @@ contract RampBaseForkTest is TestBase {
 
     function test_AddValidTokens() public {
         TokenAndFeed[] memory tokenAndFeeds = new TokenAndFeed[](1);
-        tokenAndFeeds[0] = TokenAndFeed({
-            token: address(1),
-            feed: address(1)
-        });
+        tokenAndFeeds[0] = TokenAndFeed({token: address(1), feed: address(1)});
         vm.prank(DEPLOYER);
         ramp.addValidTokens(tokenAndFeeds);
     }

@@ -15,7 +15,7 @@ export default async function loadMayan() {
   document.body.appendChild(script)
 
   loading = new Promise((resolve, reject) => {
-    script.onload = function() {
+    script.onload = function () {
       mayan = window.MayanSwap
       resolve(mayan)
       loading = undefined
